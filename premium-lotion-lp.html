@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="โลชั่นญี่ปุ่นคุณภาพสูงสำหรับสปา นวด และสถานบันเทิง ไม่มีแอลกอฮอล์ ปลอดภัย ส่งทั่วไทย">
+<title>Premium Japanese Lotion | สำหรับธุรกิจ | ส่งทั่วไทย</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Sarabun:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ─── TOKENS ─────────────────────────────────────── */
+:root {
+  --ivory:   #F8F6F1;
+  --white:   #FFFFFF;
+  --ink:     #0F0F0D;
+  --ink2:    #3A3830;
+  --ink3:    #7A766C;
+  --gold:    #B8963E;
+  --gold-lt: #D4B46A;
+  --gold-pl: #EDE0B8;
+  --gold-bg: #FAF6EC;
+  --line:    #06C755;
+  --line-dk: #059142;
+  --rule:    rgba(184,150,62,0.22);
+
+  --ff-disp: 'Playfair Display', Georgia, serif;
+  --ff-body: 'Sarabun', sans-serif;
+  --ff-cn:   'Noto Sans SC', sans-serif;
+  --ff-jp:   'Noto Sans JP', sans-serif;
+
+  --max: 520px;
+  --px: 22px;
+}
+
+/* ─── RESET ──────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;background:none;font:inherit}
+
+/* ─── BASE ───────────────────────────────────────── */
+body{
+  font-family:var(--ff-body);
+  background:var(--white);
+  color:var(--ink);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+body.l-cn{font-family:var(--ff-cn)}
+body.l-jp{font-family:var(--ff-jp)}
+
+/* ─── LANGUAGE SWITCHER ──────────────────────────── */
+#lang-bar{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;justify-content:center;
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--rule);
+  height:44px;
+}
+#lang-bar button{
+  padding:0 16px;
+  font-size:12px;
+  letter-spacing:.06em;
+  color:var(--ink3);
+  height:44px;
+  border-bottom:2px solid transparent;
+  transition:color .2s,border-color .2s;
+  font-family:var(--ff-body);
+}
+#lang-bar button.on{color:var(--gold);border-bottom-color:var(--gold);font-weight:600}
+#lang-bar button:hover{color:var(--gold)}
+
+/* ─── LANGUAGE VISIBILITY ────────────────────────── */
+[data-t],[data-ti]{display:none}
+.l-th [data-t="th"]{display:block}
+.l-en [data-t="en"]{display:block}
+.l-cn [data-t="cn"]{display:block}
+.l-jp [data-t="jp"]{display:block}
+.l-th [data-ti="th"]{display:inline}
+.l-en [data-ti="en"]{display:inline}
+.l-cn [data-ti="cn"]{display:inline}
+.l-jp [data-ti="jp"]{display:inline}
+
+/* ─── HERO ───────────────────────────────────────── */
+#hero{
+  min-height:100svh;
+  padding:80px var(--px) 60px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:var(--white);
+  position:relative;
+  overflow:hidden;
+}
+/* Vertical gold rule left of content */
+#hero::before{
+  content:'';
+  position:absolute;
+  left:var(--px);
+  top:15%;bottom:15%;
+  width:2px;
+  background:linear-gradient(to bottom,transparent,var(--gold),transparent);
+  border-radius:2px;
+}
+.hero-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  padding-left:20px;
+}
+.hero-kicker{
+  font-size:10px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-family:var(--ff-disp);
+  margin-bottom:20px;
+  opacity:0;animation:rise .7s .1s forwards;
+}
+.hero-h1{
+  font-family:var(--ff-disp);
+  font-size:clamp(38px,11vw,68px);
+  font-weight:700;
+  line-height:1.05;
+  letter-spacing:-.01em;
+  color:var(--ink);
+  margin-bottom:6px;
+  opacity:0;animation:rise .7s .25s forwards;
+}
+.hero-h1 em{
+  font-style:italic;
+  color:var(--gold);
+}
+.hero-sub{
+  font-family:var(--ff-disp);
+  font-size:clamp(13px,3.5vw,17px);
+  font-weight:400;
+  color:var(--ink3);
+  letter-spacing:.18em;
+  margin-bottom:44px;
+  opacity:0;animation:rise .7s .4s forwards;
+}
+.hero-cta-wrap{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  opacity:0;animation:rise .7s .55s forwards;
+}
+.btn-line{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--line);
+  color:#fff;
+  font-size:17px;font-weight:600;
+  padding:17px 32px;
+  border-radius:4px;
+  box-shadow:0 6px 28px rgba(6,199,85,.32);
+  transition:background .2s,transform .2s,box-shadow .2s;
+  width:100%;max-width:320px;
+  letter-spacing:.03em;
+}
+.btn-line:active,.btn-line:hover{
+  background:var(--line-dk);
+  transform:translateY(-2px);
+  box-shadow:0 10px 36px rgba(6,199,85,.42);
+}
+.hero-proof{
+  display:flex;gap:18px;flex-wrap:wrap;
+  margin-top:4px;
+}
+.proof-chip{
+  font-size:11px;letter-spacing:.06em;
+  color:var(--ink3);
+  display:flex;align-items:center;gap:6px;
+}
+.proof-chip::before{content:'✓';color:var(--gold);font-weight:700;font-size:12px}
+
+/* ─── SECTION SHELL ──────────────────────────────── */
+.sec{padding:64px var(--px)}
+.sec-inner{max-width:var(--max);margin:0 auto}
+.sec-eyebrow{
+  display:block;
+  font-size:9px;letter-spacing:.35em;text-transform:uppercase;
+  color:var(--gold);font-family:var(--ff-disp);
+  margin-bottom:10px;
+}
+.sec-h2{
+  font-family:var(--ff-disp);
+  font-size:clamp(26px,7vw,38px);
+  font-weight:700;
+  line-height:1.15;
+  color:var(--ink);
+  margin-bottom:36px;
+}
+
+/* ─── HORIZONTAL RULE ────────────────────────────── */
+.hrule{
+  border:none;
+  border-top:1px solid var(--rule);
+  margin:0;
+}
+
+/* ─── FEATURES SECTION ───────────────────────────── */
+#features{background:var(--ivory)}
+
+/* Big feature cards — one per key claim */
+.feat-list{display:flex;flex-direction:column;gap:2px}
+.feat-card{
+  background:var(--white);
+  border:1px solid rgba(184,150,62,.15);
+  border-radius:8px;
+  padding:24px 22px;
+  display:grid;
+  grid-template-columns:48px 1fr;
+  gap:0 16px;
+  align-items:start;
+  transition:box-shadow .25s,border-color .25s;
+}
+.feat-card:hover{
+  border-color:var(--gold-lt);
+  box-shadow:0 6px 24px rgba(184,150,62,.12);
+}
+.feat-icon{
+  width:48px;height:48px;
+  background:var(--gold-bg);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;
+  flex-shrink:0;
+  border:1.5px solid var(--gold-pl);
+}
+.feat-body{}
+.feat-title{
+  font-family:var(--ff-disp);
+  font-size:17px;font-weight:700;
+  color:var(--ink);
+  margin-bottom:5px;
+  line-height:1.2;
+}
+.feat-title-en{
+  display:block;
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gold);font-family:var(--ff-disp);font-weight:400;
+  margin-bottom:4px;
+}
+.feat-desc{
+  font-size:13.5px;line-height:1.75;
+  color:var(--ink2);
+}
+/* Inline CTA after features */
+.feat-cta{
+  display:flex;align-items:center;gap:8px;
+  margin-top:10px;
+  font-size:12px;color:var(--line-dk);font-weight:600;
+  letter-spacing:.04em;
+}
+.feat-cta::after{content:'→';font-size:14px}
+
+/* ─── URGENCY STRIP ──────────────────────────────── */
+.urgency-strip{
+  background:var(--ink);
+  color:#fff;
+  padding:18px var(--px);
+  text-align:center;
+}
+.urgency-strip p{
+  font-size:14px;letter-spacing:.04em;line-height:1.6;
+}
+.urgency-strip strong{color:var(--gold-lt);font-size:16px}
+
+/* ─── PRICE SECTION ──────────────────────────────── */
+#price{background:var(--white)}
+
+/* ── Price cards (new layout) ── */
+.price-cards-wrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-bottom:16px;
+}
+.pc{
+  border-radius:12px;
+  border:1.5px solid var(--rule);
+  padding:22px 16px 20px;
+  text-align:center;
+  background:var(--white);
+  position:relative;
+  display:flex;flex-direction:column;align-items:center;
+}
+.pc.pc-best{
+  border-color:var(--gold);
+  background:var(--gold-bg);
+}
+.pc-badge{
+  position:absolute;
+  top:-12px;left:50%;transform:translateX(-50%);
+  background:var(--gold);color:#fff;
+  font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  font-family:var(--ff-disp);font-weight:700;
+  padding:4px 12px;border-radius:20px;
+  white-space:nowrap;
+}
+.pc-label{
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink3);margin-bottom:10px;margin-top:6px;
+  font-family:var(--ff-disp);
+}
+.pc-best .pc-label{color:var(--gold);font-weight:600}
+.pc-qty-tag{
+  display:inline-block;
+  background:rgba(184,150,62,.12);
+  color:var(--gold);
+  font-size:12px;font-weight:600;letter-spacing:.06em;
+  border-radius:20px;padding:4px 14px;
+  margin-bottom:14px;
+  font-family:var(--ff-disp);
+}
+.pc-best .pc-qty-tag{
+  background:var(--gold);color:#fff;
+}
+.pc-thb-label{
+  font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink3);margin-bottom:4px;
+}
+.pc-price{
+  font-family:var(--ff-disp);
+  font-size:42px;font-weight:700;
+  line-height:1;
+  color:var(--ink);
+}
+.pc-best .pc-price{color:var(--gold)}
+.pc-currency{
+  font-size:14px;font-weight:400;
+  color:var(--ink3);margin-left:2px;
+}
+.pc-per{
+  font-size:11px;color:var(--ink3);margin-top:6px;
+}
+.pc-save{
+  margin-top:10px;
+  background:rgba(184,150,62,.15);
+  color:var(--gold);
+  font-size:11px;font-weight:600;letter-spacing:.04em;
+  padding:5px 12px;border-radius:20px;
+}
+.bulk-badge{display:none}/* legacy, unused */
+
+.price-note-box{
+  border:1.5px solid var(--gold-lt);
+  border-radius:8px;
+  padding:16px 18px;
+  background:var(--gold-bg);
+  margin-top:12px;
+  text-align:center;
+}
+.price-note-box p{font-size:13px;color:var(--ink2);line-height:1.65}
+.price-note-box strong{color:var(--gold);font-weight:600}
+
+.price-cta{margin-top:28px}
+
+/* ─── DELIVERY SECTION ───────────────────────────── */
+#delivery{background:var(--ivory)}
+
+.dlv-grid{display:flex;flex-direction:column;gap:12px}
+.dlv-row{
+  display:grid;grid-template-columns:56px 1fr;
+  gap:16px;
+  align-items:center;
+  padding:18px 18px;
+  background:var(--white);
+  border-radius:8px;
+  border:1px solid rgba(184,150,62,.15);
+}
+.dlv-icon{
+  width:56px;height:56px;
+  background:var(--gold-bg);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;
+  flex-shrink:0;
+}
+.dlv-label{
+  font-family:var(--ff-disp);
+  font-size:15px;font-weight:700;
+  color:var(--ink);
+  margin-bottom:4px;
+}
+.dlv-detail{font-size:13px;color:var(--ink3);line-height:1.55}
+.dlv-detail strong{color:var(--gold);font-weight:600}
+
+.dlv-disclaimer{
+  margin-top:16px;
+  padding:14px 16px;
+  background:var(--white);
+  border-left:3px solid var(--gold);
+  border-radius:0 6px 6px 0;
+  font-size:12.5px;color:var(--ink3);line-height:1.6;
+}
+
+/* ─── WHY / TRUST ────────────────────────────────── */
+#why{background:var(--white)}
+
+.trust-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.trust-card{
+  padding:20px 16px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--ivory);
+  transition:border-color .2s,box-shadow .2s;
+}
+.trust-card:hover{border-color:var(--gold-lt);box-shadow:0 4px 16px rgba(184,150,62,.1)}
+.trust-card-icon{font-size:26px;margin-bottom:10px}
+.trust-card-title{
+  font-family:var(--ff-disp);
+  font-size:14px;font-weight:700;
+  color:var(--ink);margin-bottom:4px;
+}
+.trust-card-en{
+  font-size:9px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--gold);font-family:var(--ff-disp);
+  display:block;margin-bottom:6px;
+}
+.trust-card-desc{font-size:12px;color:var(--ink3);line-height:1.5}
+
+/* ─── FLOW / STEPS SECTION ───────────────────────── */
+#flow{background:var(--ivory)}
+
+.flow-steps{display:flex;flex-direction:column}
+.flow-step{
+  display:grid;grid-template-columns:40px 1fr;
+  gap:16px;
+  padding:20px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:start;
+}
+.flow-step:last-child{border-bottom:none}
+.flow-num{
+  font-family:var(--ff-disp);
+  font-size:28px;font-weight:700;
+  color:var(--gold-pl);
+  line-height:1;
+  padding-top:2px;
+}
+.flow-text-h{
+  font-family:var(--ff-disp);
+  font-size:16px;font-weight:700;
+  color:var(--ink);
+  margin-bottom:4px;
+}
+.flow-text-p{font-size:13px;color:var(--ink3);line-height:1.6}
+.flow-btn-inline{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:10px;
+  background:var(--line);color:#fff;
+  font-size:13px;font-weight:600;
+  padding:9px 18px;border-radius:4px;
+  transition:background .2s;
+  letter-spacing:.03em;
+}
+.flow-btn-inline:hover{background:var(--line-dk)}
+
+/* ─── CONTACT ────────────────────────────────────── */
+#contact{
+  background:var(--ink);
+  color:#fff;
+  text-align:center;
+  padding:72px var(--px);
+}
+#contact .sec-inner{max-width:400px}
+#contact .sec-eyebrow{color:var(--gold-lt)}
+#contact .sec-h2{color:#fff;margin-bottom:16px}
+.contact-sub{
+  font-size:14px;color:rgba(255,255,255,.55);
+  line-height:1.75;margin-bottom:40px;
+}
+.btn-line-lg{
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  background:var(--line);color:#fff;
+  font-size:19px;font-weight:700;
+  padding:20px 32px;border-radius:4px;
+  box-shadow:0 8px 40px rgba(6,199,85,.38);
+  transition:background .2s,transform .2s,box-shadow .2s;
+  width:100%;letter-spacing:.03em;
+}
+.btn-line-lg:hover{
+  background:var(--line-dk);
+  transform:translateY(-3px);
+  box-shadow:0 14px 48px rgba(6,199,85,.5);
+}
+.contact-note{
+  margin-top:24px;
+  font-size:11px;color:rgba(255,255,255,.3);
+  letter-spacing:.06em;
+}
+
+/* ─── FOOTER ─────────────────────────────────────── */
+footer{
+  background:#0A0A08;
+  padding:32px var(--px) 88px;
+  text-align:center;
+}
+.footer-brand{
+  font-family:var(--ff-disp);
+  font-size:13px;letter-spacing:.2em;
+  color:var(--gold);
+  margin-bottom:10px;
+}
+.footer-line-link{
+  font-size:11px;color:rgba(255,255,255,.3);
+  letter-spacing:.04em;margin-bottom:14px;display:block;
+  transition:color .2s;
+}
+.footer-line-link:hover{color:var(--line)}
+.footer-copy{font-size:10px;color:rgba(255,255,255,.2);letter-spacing:.08em}
+
+/* ─── FIXED CTA BAR ──────────────────────────────── */
+#sticky-bar{
+  position:fixed;
+  bottom:0;left:0;right:0;
+  z-index:300;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-top:2px solid var(--gold-pl);
+  padding:10px 16px max(14px,env(safe-area-inset-bottom));
+  display:flex;gap:12px;align-items:center;
+  box-shadow:0 -4px 24px rgba(0,0,0,0.08);
+}
+#sticky-bar .sbar-text{
+  flex:1;
+  font-size:12px;color:var(--ink3);line-height:1.35;
+}
+#sticky-bar .sbar-text strong{display:block;color:var(--ink);font-size:13px}
+#sticky-bar .btn-line{
+  width:auto;flex-shrink:0;
+  font-size:16px;font-weight:700;
+  padding:16px 26px;
+  border-radius:6px;
+}
+
+/* ─── SCROLL REVEAL ──────────────────────────────── */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+.rv.in{opacity:1;transform:none}
+
+/* ─── ANIMATIONS ─────────────────────────────────── */
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* ─── LINE ICON SVG ──────────────────────────────── */
+.ico-line{width:22px;height:22px;flex-shrink:0}
+
+/* ─── REDUCED MOTION ─────────────────────────────── */
+@media(prefers-reduced-motion:reduce){
+  .rv,.hero-kicker,.hero-h1,.hero-sub,.hero-cta-wrap{animation:none!important;opacity:1!important;transform:none!important}
+}
+@media(max-width:340px){
+  .trust-grid{grid-template-columns:1fr}
+  .price-cards-wrap{grid-template-columns:1fr}
+  .pc-badge{font-size:8px}
+}
+</style>
+</head>
+
+<body class="l-th">
+
+<!-- LANG BAR -->
+<nav id="lang-bar" aria-label="Language">
+  <button class="on" onclick="setL('th')">ภาษาไทย</button>
+  <button onclick="setL('en')">English</button>
+  <button onclick="setL('cn')">中文</button>
+  <button onclick="setL('jp')">日本語</button>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section id="hero">
+  <div class="hero-inner">
+    <p class="hero-kicker">B2B · Spa · Massage · Entertainment</p>
+
+    <h1 class="hero-h1">
+      Premium<br><em>Japanese</em><br>Lotion
+    </h1>
+
+    <p class="hero-sub">Made in Japan &nbsp;·&nbsp; Safe &amp; Gentle</p>
+
+    <div class="hero-cta-wrap">
+      <a href="https://lin.ee/PQ9p8s8" class="btn-line" target="_blank" rel="noopener">
+        <svg class="ico-line" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.02 2 11c0 3.1 1.63 5.85 4.1 7.53L5.5 22l3.8-1.94C10.1 20.35 11.03 20.5 12 20.5c5.52 0 10-4.02 10-9S17.52 2 12 2zm1.25 12.5h-2.5v-2.5h2.5v2.5zm0-4h-2.5v-4h2.5v4z"/></svg>
+        <span data-ti="th">LINEで問い合わせる</span>
+        <span data-ti="en">Contact via LINE</span>
+        <span data-ti="cn">LINE 咨询</span>
+        <span data-ti="jp">LINEでお問い合わせ</span>
+      </a>
+      <div class="hero-proof">
+        <span class="proof-chip">
+          <span data-ti="th">ไม่มีแอลกอฮอล์</span>
+          <span data-ti="en">Alcohol Free</span>
+          <span data-ti="cn">无酒精</span>
+          <span data-ti="jp">アルコール不使用</span>
+        </span>
+        <span class="proof-chip">
+          <span data-ti="th">ปลอดภัย 100%</span>
+          <span data-ti="en">100% Safe</span>
+          <span data-ti="cn">100% 安全</span>
+          <span data-ti="jp">安全性100%</span>
+        </span>
+        <span class="proof-chip">
+          <span data-ti="th">ส่งทั่วไทย</span>
+          <span data-ti="en">Ships Nationwide</span>
+          <span data-ti="cn">全国配送</span>
+          <span data-ti="jp">全国発送</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="hrule">
+
+<!-- ══════════ FEATURES ══════════ -->
+<section id="features" class="sec">
+  <div class="sec-inner">
+    <span class="sec-eyebrow rv">
+      <span data-ti="th">คุณสมบัติของสินค้า</span>
+      <span data-ti="en">Product Features</span>
+      <span data-ti="cn">产品特点</span>
+      <span data-ti="jp">製品の特徴</span>
+    </span>
+    <h2 class="sec-h2 rv">
+      <span data-t="th">ทำไมสินค้านี้<br>ถึงแตกต่าง</span>
+      <span data-t="en">Why This Lotion<br>Stands Apart</span>
+      <span data-t="cn">为什么选择<br>我们的产品</span>
+      <span data-t="jp">この製品が<br>選ばれる理由</span>
+    </h2>
+
+    <div class="feat-list">
+
+      <!-- 1 -->
+      <div class="feat-card rv">
+        <div class="feat-icon">🇯🇵</div>
+        <div class="feat-body">
+          <span class="feat-title-en">Made in Japan</span>
+          <h3 class="feat-title">
+            <span data-t="th">ผลิตในญี่ปุ่น มาตรฐานระดับโลก</span>
+            <span data-t="en">Japanese Manufacturing Standards</span>
+            <span data-t="cn">日本制造，国际标准</span>
+            <span data-t="jp">日本製・世界水準の品質管理</span>
+          </h3>
+          <p class="feat-desc">
+            <span data-t="th">ผลิตภายใต้มาตรฐานการผลิตของญี่ปุ่น ทุกล็อตผ่านการตรวจสอบคุณภาพอย่างเข้มงวด คุณภาพคงสม่ำเสมอทุกขวด ไม่ผิดหวัง</span>
+            <span data-t="en">Every bottle is manufactured under Japan's rigorous quality standards. Consistent batch-to-batch quality you can depend on for your business.</span>
+            <span data-t="cn">每瓶产品均在日本严格的质量管理体系下生产，批次质量始终如一，让您的业务无后顾之忧。</span>
+            <span data-t="jp">日本の厳格な品質基準のもとで製造。全ロット検査済みで、一貫した品質を保証します。</span>
+          </p>
+          <a href="https://lin.ee/PQ9p8s8" class="feat-cta" target="_blank">
+            <span data-ti="th">สั่งซื้อเลย</span>
+            <span data-ti="en">Order Now</span>
+            <span data-ti="cn">立即订购</span>
+            <span data-ti="jp">今すぐ注文</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="feat-card rv">
+        <div class="feat-icon">🧴</div>
+        <div class="feat-body">
+          <span class="feat-title-en">Alcohol Free</span>
+          <h3 class="feat-title">
+            <span data-t="th">ไม่มีแอลกอฮอล์ ไม่แสบ ไม่ระคายเคือง</span>
+            <span data-t="en">Zero Alcohol — No Sting, No Irritation</span>
+            <span data-t="cn">无酒精配方，无刺激感</span>
+            <span data-t="jp">アルコール不使用・刺激ゼロ</span>
+          </h3>
+          <p class="feat-desc">
+            <span data-t="th">สูตรพิเศษไม่มีแอลกอฮอล์ ไม่ทำให้ผิวแห้งหรือระคายเคือง ลูกค้าของคุณจะรู้สึกสบายผิวตลอดการบริการ ที่สำคัญกว่านั้น ผิวของสาวๆ จะได้รับการปกป้อง ไม่ระคายเคืองสะสม ช่วยให้ทำงานได้ยาวนานขึ้น</span>
+            <span data-t="en">No alcohol means no dryness, no burning sensation. Your clients stay comfortable throughout the session — and most importantly, it protects the girls' skin from cumulative irritation, enabling long-term work without skin damage.</span>
+            <span data-t="cn">无酒精配方，不会导致皮肤干燥或灼烧感，客人全程舒适。更重要的是，保护女孩们的肌肤免受累积刺激，有助于长期稳定工作。</span>
+            <span data-t="jp">アルコール不使用で乾燥・刺激感なし。お客様が快適に過ごせるのはもちろん、女の子の肌を守ることができるため、肌トラブルなく長期勤務が可能です。</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="feat-card rv">
+        <div class="feat-icon">🌿</div>
+        <div class="feat-body">
+          <span class="feat-title-en">Skin Friendly · Non-Irritating</span>
+          <h3 class="feat-title">
+            <span data-t="th">อ่อนโยนต่อผิว ไม่คัน ไม่แพ้</span>
+            <span data-t="en">Ultra-Gentle — No Itching, No Reactions</span>
+            <span data-t="cn">温和不刺激，不引起过敏</span>
+            <span data-t="jp">超低刺激・かゆみ・アレルギー反応なし</span>
+          </h3>
+          <p class="feat-desc">
+            <span data-t="th">ออกแบบมาเป็นพิเศษสำหรับผิวบอบบาง ลดความเสี่ยงการแพ้และอาการคันได้อย่างมีประสิทธิภาพ เหมาะกับลูกค้าทุกประเภทผิว</span>
+            <span data-t="en">Specially formulated for sensitive skin. Minimizes allergy risk and itching — suitable for all skin types, giving you and your clients peace of mind.</span>
+            <span data-t="cn">专为敏感肌肤设计，有效降低过敏风险，适合所有肤质，让您和客户都能放心使用。</span>
+            <span data-t="jp">敏感肌向けの特殊処方。アレルギーリスクとかゆみを最小化。あらゆる肌タイプに対応。</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="feat-card rv">
+        <div class="feat-icon">✅</div>
+        <div class="feat-body">
+          <span class="feat-title-en">Safe if Accidentally Ingested</span>
+          <h3 class="feat-title">
+            <span data-t="th">ปลอดภัยแม้เข้าปาก ใช้ได้อย่างมั่นใจ</span>
+            <span data-t="en">Safe Even if Accidentally Ingested</span>
+            <span data-t="cn">即使误食也安全，使用更安心</span>
+            <span data-t="jp">万が一の誤嚥でも安全。安心して使用できます</span>
+          </h3>
+          <p class="feat-desc">
+            <span data-t="th">ส่วนผสมทุกอย่างได้รับการคัดสรรให้ปลอดภัย แม้เกิดการสัมผัสโดยไม่ตั้งใจก็ไม่เป็นอันตราย ให้คุณและลูกค้าใช้บริการได้อย่างสบายใจ</span>
+            <span data-t="en">Every ingredient is carefully selected for safety. Even accidental exposure poses no harm — a critical assurance for intimate use environments.</span>
+            <span data-t="cn">所有成分经过精心筛选，即使意外接触也无害，为亲密使用环境提供重要保障。</span>
+            <span data-t="jp">全成分を慎重に選定。万が一の誤嚥でも無害。デリケートな使用シーンに必須の安心感。</span>
+          </p>
+          <a href="https://lin.ee/PQ9p8s8" class="feat-cta" target="_blank">
+            <span data-ti="th">สอบถามเพิ่มเติม</span>
+            <span data-ti="en">Ask Us Anything</span>
+            <span data-ti="cn">了解更多</span>
+            <span data-ti="jp">詳しく聞く</span>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /feat-list -->
+  </div>
+</section>
+
+<!-- ══════════ URGENCY STRIP ══════════ -->
+<div class="urgency-strip">
+  <p>
+    <span data-t="th">⚡ <strong>สั่งก่อน 15:00 น. — จัดส่งวันเดียวกัน</strong><br>อย่ารอจนสต็อกหมด — เพิ่ม LINE เพื่อรับสินค้าเร็วที่สุด</span>
+    <span data-t="en">⚡ <strong>Order before 15:00 — Same Day Shipping</strong><br>Don't wait until stock runs out — LINE us now for fastest delivery.</span>
+    <span data-t="cn">⚡ <strong>下午3点前下单 — 当天发货</strong><br>库存有限，立即联系LINE，最快速度收货。</span>
+    <span data-t="jp">⚡ <strong>15時前のご注文で当日発送</strong><br>在庫切れ前にLINEでお早めにご注文ください。</span>
+  </p>
+</div>
+
+<!-- ══════════ PRICE ══════════ -->
+<section id="price" class="sec">
+  <div class="sec-inner">
+    <span class="sec-eyebrow rv">
+      <span data-ti="th">ราคา</span>
+      <span data-ti="en">Pricing</span>
+      <span data-ti="cn">价格</span>
+      <span data-ti="jp">価格</span>
+    </span>
+    <h2 class="sec-h2 rv">
+      <span data-t="th">ราคาชัดเจน<br>ยิ่งซื้อมาก ยิ่งถูก</span>
+      <span data-t="en">Simple Pricing<br>More You Buy, More You Save</span>
+      <span data-t="cn">简明定价<br>量越大越优惠</span>
+      <span data-t="jp">わかりやすい価格<br>まとめ買いほどお得</span>
+    </h2>
+
+    <div class="price-cards-wrap rv">
+
+      <!-- Standard -->
+      <div class="pc">
+        <div class="pc-label">
+          <span data-ti="th">ราคาปกติ</span>
+          <span data-ti="en">Standard</span>
+          <span data-ti="cn">标准价</span>
+          <span data-ti="jp">通常価格</span>
+        </div>
+        <div class="pc-qty-tag">
+          <span data-ti="th">1 ขวด</span>
+          <span data-ti="en">1 Bottle</span>
+          <span data-ti="cn">1 瓶</span>
+          <span data-ti="jp">1本</span>
+        </div>
+        <div class="pc-thb-label">THB / ขวด</div>
+        <div class="pc-price">1,250<span class="pc-currency"></span></div>
+        <div class="pc-per">
+          <span data-ti="th">5L ต่อขวด</span>
+          <span data-ti="en">5L per bottle</span>
+          <span data-ti="cn">5L / 瓶</span>
+          <span data-ti="jp">5L / 本</span>
+        </div>
+      </div>
+
+      <!-- Bulk Best Value -->
+      <div class="pc pc-best">
+        <div class="pc-badge">Best Value</div>
+        <div class="pc-label">
+          <span data-ti="th">ราคาพิเศษ</span>
+          <span data-ti="en">Bulk Price</span>
+          <span data-ti="cn">批量优惠价</span>
+          <span data-ti="jp">まとめ買い</span>
+        </div>
+        <div class="pc-qty-tag">
+          <span data-ti="th">10 ขวดขึ้นไป</span>
+          <span data-ti="en">10+ Bottles</span>
+          <span data-ti="cn">10瓶以上</span>
+          <span data-ti="jp">10本以上</span>
+        </div>
+        <div class="pc-thb-label">THB / ขวด</div>
+        <div class="pc-price">1,150<span class="pc-currency"></span></div>
+        <div class="pc-per">
+          <span data-ti="th">5L ต่อขวด</span>
+          <span data-ti="en">5L per bottle</span>
+          <span data-ti="cn">5L / 瓶</span>
+          <span data-ti="jp">5L / 本</span>
+        </div>
+        <div class="pc-save">
+          <span data-ti="th">ประหยัด 100฿ / ขวด</span>
+          <span data-ti="en">Save 100฿ / bottle</span>
+          <span data-ti="cn">省 100฿ / 瓶</span>
+          <span data-ti="jp">100฿ / 本お得</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="price-note-box rv">
+      <p>
+        <span data-t="th">📦 <strong>ต้องการมากกว่า 10 ขวด?</strong><br>เราพร้อมเสนอราคาพิเศษสำหรับการสั่งซื้อจำนวนมาก — ติดต่อผ่าน LINE เพื่อรับใบเสนอราคา</span>
+        <span data-t="en">📦 <strong>Ordering more than 10 bottles?</strong><br>We offer special pricing for large orders — contact us on LINE for a custom quote.</span>
+        <span data-t="cn">📦 <strong>订购超过10瓶？</strong><br>我们为大批量订单提供特别优惠价格 — 请通过LINE联系获取报价。</span>
+        <span data-t="jp">📦 <strong>10本以上のご注文の方へ</strong><br>大量注文には特別価格をご用意しています。LINEでお見積もりをお問い合わせください。</span>
+      </p>
+    </div>
+
+    <div class="price-cta rv">
+      <a href="https://lin.ee/PQ9p8s8" class="btn-line" target="_blank" rel="noopener">
+        <svg class="ico-line" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.02 2 11c0 3.1 1.63 5.85 4.1 7.53L5.5 22l3.8-1.94C10.1 20.35 11.03 20.5 12 20.5c5.52 0 10-4.02 10-9S17.52 2 12 2z"/></svg>
+        <span data-ti="th">สอบถามราคาพิเศษ</span>
+        <span data-ti="en">Get a Custom Quote</span>
+        <span data-ti="cn">获取专属报价</span>
+        <span data-ti="jp">お見積もりを依頼</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="hrule">
+
+<!-- ══════════ DELIVERY ══════════ -->
+<section id="delivery" class="sec">
+  <div class="sec-inner">
+    <span class="sec-eyebrow rv">
+      <span data-ti="th">การจัดส่ง</span>
+      <span data-ti="en">Delivery</span>
+      <span data-ti="cn">配送</span>
+      <span data-ti="jp">配送</span>
+    </span>
+    <h2 class="sec-h2 rv">
+      <span data-t="th">จัดส่งรวดเร็ว<br>ทั่วประเทศไทย</span>
+      <span data-t="en">Fast Delivery<br>Across Thailand</span>
+      <span data-t="cn">快速配送<br>覆盖全泰国</span>
+      <span data-t="jp">タイ全国<br>スピード配送</span>
+    </h2>
+
+    <div class="dlv-grid">
+      <div class="dlv-row rv">
+        <div class="dlv-icon">⚡</div>
+        <div>
+          <div class="dlv-label">
+            <span data-ti="th">จัดส่งวันเดียวกัน</span>
+            <span data-ti="en">Same Day Shipping</span>
+            <span data-ti="cn">当天发货</span>
+            <span data-ti="jp">当日発送</span>
+          </div>
+          <div class="dlv-detail">
+            <span data-t="th">สั่งก่อน <strong>15:00 น.</strong> จัดส่งภายในวันเดียวกัน</span>
+            <span data-t="en">Order before <strong>3:00 PM</strong> for same-day dispatch</span>
+            <span data-t="cn">下午 <strong>3:00</strong> 前下单，当天发货</span>
+            <span data-t="jp"><strong>午後3時</strong>前のご注文で当日発送対応</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dlv-row rv">
+        <div class="dlv-icon">🚚</div>
+        <div>
+          <div class="dlv-label">
+            <span data-ti="th">ส่งฟรีในกรุงเทพ</span>
+            <span data-ti="en">Free Bangkok Delivery</span>
+            <span data-ti="cn">曼谷免费送货</span>
+            <span data-ti="jp">バンコク無料配送</span>
+          </div>
+          <div class="dlv-detail">
+            <span data-t="th">สั่ง <strong>4 ขวดขึ้นไป</strong> ส่งฟรีในเขตกรุงเทพมหานคร</span>
+            <span data-t="en">Free delivery within Bangkok for orders of <strong>4+ bottles</strong></span>
+            <span data-t="cn"><strong>4瓶以上</strong>订单，曼谷地区免费配送</span>
+            <span data-t="jp"><strong>4本以上</strong>のご注文でバンコク市内無料配送</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dlv-row rv">
+        <div class="dlv-icon">🇹🇭</div>
+        <div>
+          <div class="dlv-label">
+            <span data-ti="th">ส่งทั่วประเทศไทย</span>
+            <span data-ti="en">Nationwide Delivery</span>
+            <span data-ti="cn">全泰国配送</span>
+            <span data-ti="jp">タイ全国発送</span>
+          </div>
+          <div class="dlv-detail">
+            <span data-t="th">จัดส่งได้ทุกจังหวัดทั่วประเทศ รวดเร็วและเชื่อถือได้</span>
+            <span data-t="en">Delivery to every province in Thailand, fast and reliable</span>
+            <span data-t="cn">送达泰国每个府，快速可靠</span>
+            <span data-t="jp">タイ全州への配送、迅速・信頼性抜群</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dlv-disclaimer rv">
+      <span data-t="th">💬 ค่าจัดส่งต่างจังหวัด: ขึ้นอยู่กับปริมาณและพื้นที่ — กรุณาสอบถามผ่าน LINE เพื่อรับราคาค่าส่งที่แม่นยำ</span>
+      <span data-t="en">💬 Shipping cost for upcountry orders varies by quantity and area — please contact us via LINE for an accurate shipping quote.</span>
+      <span data-t="cn">💬 外府运费因数量和地区而异 — 请通过LINE联系我们获取准确的运费报价。</span>
+      <span data-t="jp">💬 地方への送料は数量と地域によって異なります。正確な送料はLINEでお問い合わせください。</span>
+    </div>
+  </div>
+</section>
+
+<hr class="hrule">
+
+<!-- ══════════ WHY ══════════ -->
+<section id="why" class="sec">
+  <div class="sec-inner">
+    <span class="sec-eyebrow rv">
+      <span data-ti="th">ทำไมต้องเลือกเรา</span>
+      <span data-ti="en">Why Choose Us</span>
+      <span data-ti="cn">为什么选择我们</span>
+      <span data-ti="jp">選ばれる理由</span>
+    </span>
+    <h2 class="sec-h2 rv">
+      <span data-t="th">ร้านค้าและสปา<br>ทั่วไทยวางใจเรา</span>
+      <span data-t="en">Trusted by Businesses<br>Across Thailand</span>
+      <span data-t="cn">深受全泰国<br>商家信赖</span>
+      <span data-t="jp">タイ全土の<br>ビジネスに信頼されて</span>
+    </h2>
+
+    <div class="trust-grid rv">
+      <div class="trust-card">
+        <div class="trust-card-icon">🏅</div>
+        <span class="trust-card-en">Japanese Quality</span>
+        <div class="trust-card-title">
+          <span data-ti="th">คุณภาพญี่ปุ่น</span>
+          <span data-ti="en">Japanese Quality</span>
+          <span data-ti="cn">日本品质</span>
+          <span data-ti="jp">日本品質</span>
+        </div>
+        <div class="trust-card-desc">
+          <span data-t="th">มาตรฐานสูงสุด ผ่านการรับรอง</span>
+          <span data-t="en">Highest standards, certified</span>
+          <span data-t="cn">最高标准，经过认证</span>
+          <span data-t="jp">最高基準・認証済み</span>
+        </div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon">📦</div>
+        <span class="trust-card-en">Stable Supply</span>
+        <div class="trust-card-title">
+          <span data-ti="th">สต็อกสม่ำเสมอ</span>
+          <span data-ti="en">Stable Supply</span>
+          <span data-ti="cn">稳定供货</span>
+          <span data-ti="jp">安定供給</span>
+        </div>
+        <div class="trust-card-desc">
+          <span data-t="th">มีสินค้าพร้อมส่งตลอดเวลา</span>
+          <span data-t="en">Always in stock, always ready</span>
+          <span data-t="cn">随时有货，随时发货</span>
+          <span data-t="jp">常時在庫あり、即発送</span>
+        </div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon">💬</div>
+        <span class="trust-card-en">Fast Response</span>
+        <div class="trust-card-title">
+          <span data-ti="th">ตอบเร็ว ไม่รอนาน</span>
+          <span data-ti="en">Fast Response</span>
+          <span data-ti="cn">快速响应</span>
+          <span data-ti="jp">迅速対応</span>
+        </div>
+        <div class="trust-card-desc">
+          <span data-t="th">ทีมงานพร้อมตอบ LINE ทุกวัน</span>
+          <span data-t="en">Our team answers LINE every day</span>
+          <span data-t="cn">团队每天都在LINE上解答</span>
+          <span data-t="jp">毎日LINEで対応中</span>
+        </div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon">💰</div>
+        <span class="trust-card-en">Competitive Price</span>
+        <div class="trust-card-title">
+          <span data-ti="th">ราคาแข่งขันได้</span>
+          <span data-ti="en">Competitive Pricing</span>
+          <span data-ti="cn">极具竞争力的价格</span>
+          <span data-ti="jp">競争力ある価格</span>
+        </div>
+        <div class="trust-card-desc">
+          <span data-t="th">ราคาดี ยิ่งสั่งมาก ยิ่งประหยัด</span>
+          <span data-t="en">Great value, bigger savings in bulk</span>
+          <span data-t="cn">超值价格，批量更优惠</span>
+          <span data-t="jp">大量注文でさらにお得</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="hrule">
+
+<!-- ══════════ ORDER FLOW ══════════ -->
+<section id="flow" class="sec">
+  <div class="sec-inner">
+    <span class="sec-eyebrow rv">
+      <span data-ti="th">วิธีสั่งซื้อ</span>
+      <span data-ti="en">How to Order</span>
+      <span data-ti="cn">如何订购</span>
+      <span data-ti="jp">ご注文の流れ</span>
+    </span>
+    <h2 class="sec-h2 rv">
+      <span data-t="th">สั่งง่าย 3 ขั้นตอน</span>
+      <span data-t="en">3 Simple Steps</span>
+      <span data-t="cn">简单3步完成订购</span>
+      <span data-t="jp">3ステップで簡単注文</span>
+    </h2>
+
+    <div class="flow-steps">
+      <div class="flow-step rv">
+        <div class="flow-num">1</div>
+        <div>
+          <div class="flow-text-h">
+            <span data-ti="th">เพิ่ม LINE เพื่อติดต่อ</span>
+            <span data-ti="en">Add us on LINE</span>
+            <span data-ti="cn">添加我们的LINE</span>
+            <span data-ti="jp">LINEを友達追加</span>
+          </div>
+          <div class="flow-text-p">
+            <span data-t="th">กดปุ่มด้านล่างเพื่อเพิ่ม LINE ของเรา ง่าย รวดเร็ว ไม่ซับซ้อน</span>
+            <span data-t="en">Tap the button below to add our LINE account. Quick and simple.</span>
+            <span data-t="cn">点击下方按钮添加我们的LINE账号，快速简单。</span>
+            <span data-t="jp">下のボタンからLINEを友達追加。簡単・スピーディー。</span>
+          </div>
+          <a href="https://lin.ee/PQ9p8s8" class="flow-btn-inline" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.02 2 11c0 3.1 1.63 5.85 4.1 7.53L5.5 22l3.8-1.94C10.1 20.35 11.03 20.5 12 20.5c5.52 0 10-4.02 10-9S17.52 2 12 2z"/></svg>
+            <span data-ti="th">เพิ่ม LINE</span>
+            <span data-ti="en">Add LINE</span>
+            <span data-ti="cn">添加LINE</span>
+            <span data-ti="jp">LINE追加</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="flow-step rv">
+        <div class="flow-num">2</div>
+        <div>
+          <div class="flow-text-h">
+            <span data-ti="th">แจ้งจำนวนที่ต้องการ</span>
+            <span data-ti="en">Tell us your quantity</span>
+            <span data-ti="cn">告知所需数量</span>
+            <span data-ti="jp">必要数量をお知らせください</span>
+          </div>
+          <div class="flow-text-p">
+            <span data-t="th">บอกจำนวนที่ต้องการ เราจะแจ้งราคาและค่าจัดส่งที่แน่นอนให้ทันที</span>
+            <span data-t="en">Tell us how many bottles you need. We'll confirm the price and shipping cost right away.</span>
+            <span data-t="cn">告诉我们您需要多少瓶，我们会立即确认价格和运费。</span>
+            <span data-t="jp">必要な本数をお知らせいただければ、すぐに価格と送料をご連絡します。</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-step rv">
+        <div class="flow-num">3</div>
+        <div>
+          <div class="flow-text-h">
+            <span data-ti="th">โอนเงิน — รอรับสินค้า</span>
+            <span data-ti="en">Pay &amp; Receive</span>
+            <span data-ti="cn">付款后等待收货</span>
+            <span data-ti="jp">お支払い後、商品をお受け取り</span>
+          </div>
+          <div class="flow-text-p">
+            <span data-t="th">โอนชำระเงิน จัดส่งทันที สั่งก่อน 15:00 น. ได้รับสินค้าในวันเดียวกัน (กรุงเทพ)</span>
+            <span data-t="en">Complete payment and we ship immediately. Order before 3 PM for same-day delivery in Bangkok.</span>
+            <span data-t="cn">完成付款后立即发货。下午3点前下单，曼谷当天送达。</span>
+            <span data-t="jp">お支払い後すぐに発送。午後3時前のご注文でバンコク当日着。</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section id="contact">
+  <div class="sec-inner rv">
+    <span class="sec-eyebrow">
+      <span data-ti="th">ติดต่อเรา</span>
+      <span data-ti="en">Get in Touch</span>
+      <span data-ti="cn">联系我们</span>
+      <span data-ti="jp">お問い合わせ</span>
+    </span>
+    <h2 class="sec-h2">
+      <span data-t="th">พร้อมให้บริการ<br>ตอบทุกคำถาม</span>
+      <span data-t="en">We're Ready to<br>Answer Everything</span>
+      <span data-t="cn">随时准备<br>解答您的问题</span>
+      <span data-t="jp">どんな質問にも<br>すぐにお答えします</span>
+    </h2>
+    <p class="contact-sub">
+      <span data-t="th">สอบถามราคา / ตรวจสอบสต็อก / สั่งซื้อจำนวนมาก<br>ส่งข้อความหาเราได้เลยทาง LINE</span>
+      <span data-t="en">Price inquiries · Stock availability · Bulk orders<br>Message us directly on LINE — we reply fast.</span>
+      <span data-t="cn">价格咨询 · 库存查询 · 大批量订购<br>直接通过LINE联系我们，我们会快速回复。</span>
+      <span data-t="jp">価格確認・在庫確認・大量注文<br>LINEでお気軽にメッセージください。</span>
+    </p>
+    <a href="https://lin.ee/PQ9p8s8" class="btn-line-lg" target="_blank" rel="noopener">
+      <svg class="ico-line" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.02 2 11c0 3.1 1.63 5.85 4.1 7.53L5.5 22l3.8-1.94C10.1 20.35 11.03 20.5 12 20.5c5.52 0 10-4.02 10-9S17.52 2 12 2z"/></svg>
+      Contact via LINE
+    </a>
+    <p class="contact-note">
+      <span data-t="th">ตอบเร็ว · ทุกวัน</span>
+      <span data-t="en">Fast replies · Every day</span>
+      <span data-t="cn">快速回复 · 每天</span>
+      <span data-t="jp">迅速対応 · 毎日</span>
+    </p>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="footer-brand">PREMIUM JAPANESE LOTION</div>
+  <a href="https://lin.ee/PQ9p8s8" class="footer-line-link" target="_blank" rel="noopener">line.me/ti/p/5kJmgeBnvP</a>
+  <div class="footer-copy">© 2026 All Rights Reserved &nbsp;·&nbsp; Made in Japan Premium Lubricant</div>
+</footer>
+
+<!-- ══════════ STICKY BAR ══════════ -->
+<div id="sticky-bar">
+  <div class="sbar-text">
+    <strong>
+      <span data-ti="th">⚡ สั่งก่อน 15:00 น. — ส่งวันนี้</span>
+      <span data-ti="en">⚡ Order before 3PM — Ships Today</span>
+      <span data-ti="cn">⚡ 3点前下单 — 今日发货</span>
+      <span data-ti="jp">⚡ 15時前に注文 — 今日発送</span>
+    </strong>
+    <span data-ti="th">ถามราคา / สั่งซื้อผ่าน LINE</span>
+    <span data-ti="en">Enquire &amp; order via LINE</span>
+    <span data-ti="cn">通过LINE咨询下单</span>
+    <span data-ti="jp">LINEで問い合わせ・注文</span>
+  </div>
+  <a href="https://lin.ee/PQ9p8s8" class="btn-line" target="_blank" rel="noopener" style="font-size:16px;padding:16px 26px;width:auto">
+    <svg class="ico-line" viewBox="0 0 24 24" fill="white" style="width:18px;height:18px"><path d="M12 2C6.48 2 2 6.02 2 11c0 3.1 1.63 5.85 4.1 7.53L5.5 22l3.8-1.94C10.1 20.35 11.03 20.5 12 20.5c5.52 0 10-4.02 10-9S17.52 2 12 2z"/></svg>
+    LINE
+  </a>
+</div>
+
+<!-- ══════════ SCRIPT ══════════ -->
+<script>
+/* Language */
+const LANGS = ['th','en','cn','jp'];
+function setL(l){
+  document.body.className = 'l-'+l;
+  document.documentElement.lang = {th:'th',en:'en',cn:'zh',jp:'ja'}[l];
+  document.querySelectorAll('#lang-bar button').forEach((b,i)=>{
+    b.classList.toggle('on', LANGS[i]===l);
+  });
+}
+
+/* Scroll reveal */
+const rvEls = document.querySelectorAll('.rv');
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:0.1,rootMargin:'0px 0px -32px 0px'});
+rvEls.forEach((el,i)=>{
+  // Stagger siblings in same parent
+  const sib = [...el.parentNode.children].filter(c=>c.classList.contains('rv'));
+  const idx = sib.indexOf(el);
+  el.style.transitionDelay = (idx * 70)+'ms';
+  io.observe(el);
+});
+</script>
+</body>
+</html>
